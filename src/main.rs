@@ -1,7 +1,3 @@
-// I have modifield your sample above about rust reeverse proxy, it runs and it can return kind of json like from my server
-// my question is in those sample you use  rust rocket `request multiple segment --> <path..>` `
-// why using that ?
-// and how if I want to route couple of rest API path  ? in this case I use http://103.127.133.115:8000/token_xyz/table_list
 #[macro_use] extern crate rocket;
 
 use rocket::tokio::sync::RwLock;
