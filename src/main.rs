@@ -1,3 +1,7 @@
+// I have modifield your sample above about rust reeverse proxy, it runs and it can return kind of json like from my server
+// my question is in those sample you use  rust rocket `request multiple segment --> <path..>` `
+// why using that ?
+// and how if I want to route couple of rest API path  ? in this case I use http://103.127.133.115:8000/token_xyz/table_list
 #[macro_use] extern crate rocket;
 
 use rocket::tokio::sync::RwLock;
@@ -40,33 +44,10 @@ fn rocket() -> _ {
     let client = Client::new();
     let config = ProxyConfig {
         client,
-        target: "https://rocket.rs/guide/v0.5/getting-started".to_string(),
+        target: "http://103.127.133.115:8000/token_xyz/table_list".to_string(),
     };
 
     rocket::build()
         .manage(Arc::new(RwLock::new(config)))
         .mount("/", routes![proxy])
 }
-
-
-// ======================
-
-
-
-// use std::path::PathBuf;
-
-// #[macro_use] extern crate rocket;
-
-// #[get("/")]
-// fn index() -> &'static str {
-//     "Hello, world!"
-// }
-// #[get("/page/<path..>")]
-// fn get_page(path: PathBuf) { 
-//     println!("{:?}", path.to_str().unwrap());
-//  }
-
-// #[launch]
-// fn rocket() -> _ {
-//     rocket::build().mount("/", routes![index, get_page])
-// }
