@@ -44,7 +44,7 @@ fn rocket() -> _ {
     let client = Client::new();
     let config = ProxyConfig {
         client,
-        target: "http://103.127.133.115:8000/token_xyz/table_list".to_string(),
+        target: "https://my-json-server.typicode.com/delcode92/FAKE_DUMMY_DUMB_JSON/posts/1".to_string(),
     };
 
     rocket::build()
