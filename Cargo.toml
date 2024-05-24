@@ -7,5 +7,7 @@ edition = "2021"
 
 [dependencies]
 reqwest = "0.12.4"
-rocket = "0.5.0"
+rocket = {version="0.5.0", features = ["json"]}
 tokio = "1.37.0"
+jsonwebtoken = "=9.3.0"
+serde = { version = "1.0.202", features = ["derive"] }
